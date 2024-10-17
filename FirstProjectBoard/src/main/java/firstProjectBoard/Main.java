@@ -18,10 +18,17 @@ public class Main {
         if (bf.isPasswordsAccess()) {
             bf.checkPassword();
         }
+        if (bf.isIdLoginAccess() && bf.isPasswordsAccess()) {
+            bf.chooseMenufuntion();
+            bf.selectMenu();
+            bf.selectMenu11();
 
+
+        } else {
+            System.out.println("프로그램을 종료합니다");
+        }
     }
 
 
 }
-
 

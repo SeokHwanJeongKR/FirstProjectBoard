@@ -2,15 +2,15 @@ package firstProjectBoard;
 
 public interface BoardStructure {
 
-    void Wr1itePost();
+    void writePost();
 
-    void ViewPost();
+    void viewPost();
 
-    void DeletePost();
+    void deletePost();
 
-    void EditPost();
+    void editPost();
 
-    void PostList();
+    void postList();
 
 
 }
