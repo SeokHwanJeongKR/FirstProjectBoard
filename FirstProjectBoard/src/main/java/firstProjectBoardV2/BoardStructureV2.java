@@ -1,6 +1,6 @@
-package firstProjectBoard;
+package firstProjectBoardV2;
 
-public interface BoardStructure {
+public interface BoardStructureV2 {
 
     void writePost();
 

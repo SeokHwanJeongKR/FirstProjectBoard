@@ -1,4 +1,4 @@
-package firstProjectBoard;
+package firstProjectBoardV1;
 
 import java.util.Scanner;
 

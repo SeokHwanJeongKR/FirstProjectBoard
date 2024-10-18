@@ -1,4 +1,4 @@
-package firstProjectBoard;
+package firstProjectBoardV1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -65,7 +65,6 @@ public class Boardfunction implements BoardStructure {
                 }
 
         }
-
 
     }
 
@@ -177,15 +176,13 @@ public void selectMenu() {
                 System.out.println("올바른 번호를 입력해주세요.");
             }
         }
-
     }
-
 }
 
 
    public void selectMenu11() {
         while (boardAccess1 && !arr.isEmpty()) {
-            try {
+
                 System.out.println("게시글이 있으므로 게시판이 활성화 됩니다.");
                 System.out.println("현재 구현된 기능: 1. 작성, 2. 조회, 3. 삭제, 4. 수정, 5. 목록 6.종료 입니다.");
                 boardAccess2 = sc.nextLine();
@@ -222,9 +219,7 @@ public void selectMenu() {
 
                 }else {
                     System.out.println("올바른 번호를 입력해주세요.");
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("숫자를 입력해주세요.");
+
             }
         }
     }
@@ -252,10 +247,9 @@ public void selectMenu() {
                 try {
                     System.out.println("몇 번 항목을 조회하시겠습니까?");
                     postnumber = Integer.parseInt(sc.nextLine());
-                    int index = postnumber - 1;
 
-                    if (index >= 0 && index < arr.size()) {
-                        System.out.println("선택한 항목 : " + (index + 1) + "\n" + arr.get(index));
+                    if (postnumber >= 1 && postnumber -1 < arr.size()) {
+                        System.out.println("선택한 항목 : " + (postnumber) + "\n" + arr.get(postnumber-1));
                         viewPostAccept = true;
                         selectMenu11();
                         break;
@@ -306,11 +300,7 @@ public void selectMenu() {
             } finally {
                 selectMenu11();
             }
-        } else {
-            selectMenu();
         }
-
-
 
     }
 
@@ -324,6 +314,6 @@ public void selectMenu() {
         }
         selectMenu11();
     }
-    
+
 }
 
