@@ -8,7 +8,6 @@ public class Main {
         Boardfunction bf = new Boardfunction();
         Scanner sc = new Scanner(System.in);
 
-
         bf.start();
         bf.chooseLogin();
         bf.acceptLogin();
@@ -22,7 +21,6 @@ public class Main {
             bf.chooseMenufuntion();
             bf.selectMenu();
             bf.selectMenu11();
-
 
         } else {
             System.out.println("프로그램을 종료합니다");

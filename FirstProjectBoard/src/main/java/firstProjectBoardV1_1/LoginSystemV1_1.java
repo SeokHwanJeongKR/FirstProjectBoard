@@ -1,9 +1,9 @@
-package firstProjectBoardV2;
+package firstProjectBoardV1_1;
 
 
 import java.util.Scanner;
 
-public class LoginSystem {
+public class LoginSystemV1_1 {
     Scanner sc = new Scanner(System.in);
 
 
@@ -15,12 +15,13 @@ public class LoginSystem {
     private boolean start = false;
     private boolean idLoginAccess;
     private boolean passwordsAccess;
-    private MenuV2 menu;
 
-    public LoginSystem(MenuV2 menu) {
+
+    private MenuV1_1 menu;
+
+    public LoginSystemV1_1(MenuV1_1 menu) {
         this.menu = menu;
     }
-
 
     public boolean isStart() {
         return start;
@@ -144,6 +145,4 @@ public class LoginSystem {
             }
         }
     }
-
-
 }

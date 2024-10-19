@@ -1,13 +1,12 @@
-package firstProjectBoardV2;
+package firstProjectBoardV1_1;
 
 import java.util.Scanner;
 
-public class MainV2 {
+public class MainV1_1 {
 
     public static void main(String[] args) {
-        MenuV2 menu = new MenuV2();
-        LoginSystem ls = new LoginSystem(menu);
-        BoardfunctionV2 bf = new BoardfunctionV2();
+        MenuV1_1 menu = new MenuV1_1();
+        LoginSystemV1_1 ls = new LoginSystemV1_1(menu);
         Scanner sc = new Scanner(System.in);
 
 
@@ -28,12 +27,12 @@ public class MainV2 {
             }
             if(ls.isIdLoginAccess() && ls.isPasswordsAccess()) {
                 ls.chooseMenufuntion();
-                menu.selectMenu();
-                menu.selectMenu2();
             }
-
-
-
+            while (true) {
+                menu.selectMenu();
+                break;
+            }
+            break;
         }
     }
 }

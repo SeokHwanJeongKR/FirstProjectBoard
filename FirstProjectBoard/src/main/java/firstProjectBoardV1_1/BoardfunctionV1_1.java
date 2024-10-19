@@ -1,9 +1,9 @@
-package firstProjectBoardV2;
+package firstProjectBoardV1_1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BoardfunctionV2 implements BoardStructureV2 {
+public class BoardfunctionV1_1 implements BoardStructureV1_1 {
 
     Scanner sc = new Scanner(System.in);
     ArrayList<String> arr = new ArrayList<>();
@@ -13,19 +13,9 @@ public class BoardfunctionV2 implements BoardStructureV2 {
     private int postnumber;
     private String title;
     private String content;
-
-
-
     private boolean idLoginAccess = false;
     private boolean passwordsAccess = false;
-
     private boolean viewPostAccept = false;
-
-
-
-
-
-
 
     public boolean isIdLoginAccess() {
         return idLoginAccess;
@@ -34,10 +24,6 @@ public class BoardfunctionV2 implements BoardStructureV2 {
     public boolean isPasswordsAccess() {
         return passwordsAccess;
     }
-
-
-
-
 
 
 
@@ -126,4 +112,5 @@ public class BoardfunctionV2 implements BoardStructureV2 {
     }
 
 }
+
 
