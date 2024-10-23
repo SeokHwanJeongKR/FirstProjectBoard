@@ -1,12 +1,14 @@
-package firstProjectBoardV1_1;
+package firstProjectBoardV2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BoardfunctionV1_1 implements BoardStructureV1_1 {
+public class BoardfunctionV2 implements BoardStructureV2 {
 
     Scanner sc = new Scanner(System.in);
     ArrayList<String> arr = new ArrayList<>();
+
+
 
     private int postnumber;
     private String title;
@@ -14,6 +16,24 @@ public class BoardfunctionV1_1 implements BoardStructureV1_1 {
     private boolean idLoginAccess = false;
     private boolean passwordsAccess = false;
     private boolean viewPostAccept = false;
+    private boolean memberBoardAccess;
+    private boolean visitorBoardAccess;
+
+    public boolean isVisitorBoardAccess() {
+        return visitorBoardAccess;
+    }
+
+    public void setVisitorBoardAccess(boolean visitorBoardAccess) {
+        this.visitorBoardAccess = visitorBoardAccess;
+    }
+
+    public boolean isMemberBoardAccess() {
+        return memberBoardAccess;
+    }
+
+    public void setMemberBoardAccess(boolean memberBoardAccess) {
+        this.memberBoardAccess = memberBoardAccess;
+    }
 
     public boolean isIdLoginAccess() {
         return idLoginAccess;
@@ -21,6 +41,10 @@ public class BoardfunctionV1_1 implements BoardStructureV1_1 {
 
     public boolean isPasswordsAccess() {
         return passwordsAccess;
+    }
+
+    public void addBoard() {
+
     }
 
 
@@ -105,6 +129,9 @@ public class BoardfunctionV1_1 implements BoardStructureV1_1 {
                 System.out.println("항목 " + (i + 1) + ":\n" + arr.get(i));
                 System.out.println("---------------------");
             }
+        } else {
+            System.out.println("현재 게시글이 없습니다.");
+
         }
     }
 
