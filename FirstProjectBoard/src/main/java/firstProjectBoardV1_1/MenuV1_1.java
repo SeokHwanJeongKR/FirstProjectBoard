@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MenuV1_1 {
     Scanner sc = new Scanner(System.in);
-    BoardfunctionV1_1 bf = new BoardfunctionV1_1();
+
 
 
     private String boardFunction;
@@ -25,6 +25,7 @@ public class MenuV1_1 {
     private String title;
     private String content;
 
+    BoardfunctionV1_1 bf = new BoardfunctionV1_1();
     public void selectMenu() {
 
             while (boardAccess && bf.arr.isEmpty()) {

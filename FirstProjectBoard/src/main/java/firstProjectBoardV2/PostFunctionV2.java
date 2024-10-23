@@ -3,52 +3,21 @@ package firstProjectBoardV2;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BoardfunctionV2 implements BoardStructureV2 {
+public class PostFunctionV2 implements PostStructureV2 {
 
     Scanner sc = new Scanner(System.in);
     ArrayList<String> arr = new ArrayList<>();
 
-
-
     private int postnumber;
     private String title;
     private String content;
-    private boolean idLoginAccess = false;
-    private boolean passwordsAccess = false;
     private boolean viewPostAccept = false;
-    private boolean memberBoardAccess;
-    private boolean visitorBoardAccess;
 
-    public boolean isVisitorBoardAccess() {
-        return visitorBoardAccess;
+    private String boardname;
+
+    public void setBoardname(String boardname) {
+        this.boardname = boardname;
     }
-
-    public void setVisitorBoardAccess(boolean visitorBoardAccess) {
-        this.visitorBoardAccess = visitorBoardAccess;
-    }
-
-    public boolean isMemberBoardAccess() {
-        return memberBoardAccess;
-    }
-
-    public void setMemberBoardAccess(boolean memberBoardAccess) {
-        this.memberBoardAccess = memberBoardAccess;
-    }
-
-    public boolean isIdLoginAccess() {
-        return idLoginAccess;
-    }
-
-    public boolean isPasswordsAccess() {
-        return passwordsAccess;
-    }
-
-    public void addBoard() {
-
-    }
-
-
-    @Override
     public void writePost() {
 
         System.out.println("제목을 설정 해주세요");
@@ -59,7 +28,6 @@ public class BoardfunctionV2 implements BoardStructureV2 {
 
     }
 
-    @Override
     public void viewPost() {
         if (!arr.isEmpty()) {
 
@@ -71,6 +39,7 @@ public class BoardfunctionV2 implements BoardStructureV2 {
                     postnumber = Integer.parseInt(sc.nextLine());
 
                     if (postnumber >= 1 && postnumber -1 < arr.size()) {
+                        System.out.println( "http://www.board.com/" +boardname +"/post/?=" + postnumber);
                         System.out.println("선택한 항목 : " + (postnumber) + "\n" + arr.get(postnumber-1));
                         viewPostAccept = true;
 
@@ -88,7 +57,6 @@ public class BoardfunctionV2 implements BoardStructureV2 {
     }
 
 
-    @Override
     public void deletePost() {
         if (!arr.isEmpty()) {
             try {
@@ -104,7 +72,7 @@ public class BoardfunctionV2 implements BoardStructureV2 {
         }
     }
 
-    @Override
+
     public void editPost() {
         if (!arr.isEmpty()) {
             try {
@@ -122,11 +90,11 @@ public class BoardfunctionV2 implements BoardStructureV2 {
 
     }
 
-    @Override
+
     public void postList() {
         if (!arr.isEmpty()) {
             for (int i = 0; i < arr.size(); i++) {
-                System.out.println("항목 " + (i + 1) + ":\n" + arr.get(i));
+                System.out.println("No" + (i + 1) + "\n" + arr.get(i));
                 System.out.println("---------------------");
             }
         } else {
