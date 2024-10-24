@@ -100,25 +100,26 @@ public class BoardFuntionV2 {
 
                 } else {
                     listBoard();
-                    System.out.println("조회 할 게시판을 불러옵니다 (?=board+number 형식으로 적어주세요 ex.?=board1)");
-                    System.out.print("URL : http://www.board.com/board/entry");
-                    String splitpost = sc.nextLine();
-                    String[] parts = splitpost.split("board");
+                    while(true){
+                        System.out.println("조회 할 게시판을 불러옵니다 (?=board+number 형식으로 적어주세요 ex.?=board1)");
+                        System.out.print("URL : http://www.board.com/board/view");
+                        String splitpost = sc.nextLine();
+                        String[] parts = splitpost.split("board");
 
+                        if (parts.length == 2 && parts[0].equals("?=")) {
+                            String postStr = parts[1].trim();
+                            boardnumber = Integer.parseInt(postStr);
 
-
-                    if (parts.length == 2 && parts[0].equals("?=")) {
-                        String postStr = parts[1].trim();
-                        boardnumber = Integer.parseInt(postStr);
-
-                        if ( boardnumber >= 1 && boardnumber - 1 < boardNames.size()) {
-                            PostFunctionV2 selectedBoardFunction = board.get(boardnumber - 1);  // 선택된 게시판의 기능 가져오기
-                            menuPost(selectedBoardFunction);
-                        }  else {
-                            System.out.println("잘못된 번호입니다. 유효한 범위는 1부터 " + boardNames.size() + "까지입니다.");
+                            if ( boardnumber >= 1 && boardnumber - 1 < boardNames.size()) {
+                                PostFunctionV2 selectedBoardFunction = board.get(boardnumber - 1);  // 선택된 게시판의 기능 가져오기
+                                menuPost(selectedBoardFunction);
+                                break;
+                            }  else {
+                                System.out.println("잘못된 번호입니다. 유효한 범위는 1부터 " + boardNames.size() + "까지입니다.");
+                            }
+                        } else {
+                            System.out.println("제대로 된 형태를 입력 해주세요");
                         }
-                    } else {
-                        System.out.println("제대로 된 형태를 입력 해주세요");
                     }
 
                 }

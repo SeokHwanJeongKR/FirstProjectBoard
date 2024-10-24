@@ -25,13 +25,13 @@ public class BoardMenu {
         while (true) {
             Map<String, Runnable> Function = new HashMap<>();
             Function.put("/add",bf::addBoard);
-            Function.put("/entry",bf::entryBoard);
+            Function.put("/view",bf::entryBoard);
             Function.put("/remove",bf::removeBoard);
             Function.put("/edit",bf::editBoard);
             Function.put("/list",bf::listBoard);
 
 
-            System.out.println("어떤 기능을 사용 하시겠습니까? /add, /entry ,/remove, /list ,/logout");
+            System.out.println("어떤 기능을 사용 하시겠습니까? /add, /view ,/remove, /list ,/logout");
             System.out.print( "URL : http://www.board.com/board");
             boardOption = sc.nextLine();
             Runnable action = Function.get(boardOption);

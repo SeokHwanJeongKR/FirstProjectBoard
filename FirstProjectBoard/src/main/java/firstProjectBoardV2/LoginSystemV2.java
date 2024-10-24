@@ -84,7 +84,7 @@ public class LoginSystemV2 {
                 continue;
             }
 
-            System.out.println("올바른 이메일 형식입니다: " + email);
+            System.out.println("가입 완료 되었습니다");
             break;
 
         }
