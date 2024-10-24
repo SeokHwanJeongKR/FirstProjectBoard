@@ -32,7 +32,7 @@ public class BoardMenu {
 
 
             System.out.println("어떤 기능을 사용 하시겠습니까? /add, /entry ,/remove, /list ,/logout");
-            System.out.print( "http://www.board.com/board");
+            System.out.print( "URL : http://www.board.com/board");
             boardOption = sc.nextLine();
             Runnable action = Function.get(boardOption);
 
@@ -41,7 +41,7 @@ public class BoardMenu {
             } else if (boardOption.equals("/logout")) {
                 System.out.println("로그아웃 합니다");
                 break;
-            }else {
+            } else {
                 System.out.println("처리 불가능");
             }
         }
