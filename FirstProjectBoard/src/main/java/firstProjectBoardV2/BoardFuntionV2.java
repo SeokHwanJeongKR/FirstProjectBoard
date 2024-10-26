@@ -111,7 +111,7 @@ public class BoardFuntionV2 {
                             boardnumber = Integer.parseInt(postStr);
 
                             if ( boardnumber >= 1 && boardnumber - 1 < boardNames.size()) {
-                                PostFunctionV2 selectedBoardFunction = board.get(boardnumber - 1);  // 선택된 게시판의 기능 가져오기
+                                PostFunctionV2 selectedBoardFunction = board.get(boardnumber - 1);
                                 menuPost(selectedBoardFunction);
                                 break;
                             }  else {
