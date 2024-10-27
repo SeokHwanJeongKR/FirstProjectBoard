@@ -198,8 +198,26 @@ public class LoginSystemV2 {
                     System.out.println("바꿀 password를 입력해주세요");
                     password = sc.nextLine();
 
-                    System.out.println("등록할 E-mail을 입력 해주세요");
-                    email = sc.nextLine();
+                    while (true) {
+                        System.out.println("등록할 E-mail을 입력 해주세요");
+                        email = sc.nextLine();
+
+                        String[] emailcheck = email.split("@");
+                        if (emailcheck.length != 2) {
+                            System.out.println("잘못된 형식 입니다. 다시 입력해주세요.");
+                            continue;
+                        }
+                        String emailaddress = emailcheck[1];  // @ 뒤쪽 부분
+
+
+                        if (!emailaddress.endsWith(".com")) {
+                            System.out.println("잘못된 형식 입니다. 다시 입력해주세요.");
+                            continue;
+                        }
+
+                        System.out.println("정보 수정이 완료 되었습니다");
+                        break;
+                    }
 
                     memberinfo.put(id,new LoginSystemV2(id,password,name,email));
                 } else {
